@@ -1,0 +1,12 @@
+@import 'utilities/_flexbox';
+
+.item {
+	padding: 15px 0;
+	border-bottom: 1px solid rgb(0, 0, 0);
+	font-size: 18px;
+	@extend %u-flex-v-center;
+
+	img {
+		margin-right: 20px;
+	}
+}

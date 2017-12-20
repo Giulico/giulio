@@ -1,0 +1,58 @@
+@import 'variables';
+
+@mixin font-face($name, $path, $filename: $name, $weight: normal, $style: normal) {
+
+	@font-face {
+		font-family: $name;
+		font-weight: $weight;
+		font-style: $style;
+		src:
+			url('#{$path}/#{$filename}/#{$filename}.woff2') format('woff2'),
+			url('#{$path}/#{$filename}/#{$filename}.woff') format('woff');
+	}
+}
+
+@mixin transform-center($position: relative) {
+	position: $position;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+@mixin transform-v-center($position: relative) {
+	position: $position;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@mixin transform-h-center($position: relative) {
+	position: $position;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+@mixin absolute-center($width, $height) {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: $width;
+	height: $height;
+	margin-top: - $height / 2;
+	margin-left: - $width / 2;
+}
+
+@mixin arrow-down($size: 7px, $color: red) {
+	width: 0;
+	height: 0;
+	border-top: $size solid $color;
+	border-right: $size solid transparent;
+	border-left: $size solid transparent;
+}
+
+@mixin arrow-right($size: 7px, $color: red) {
+	width: 0;
+	height: 0;
+	border-top: $size solid transparent;
+	border-bottom: $size solid transparent;
+	border-left: $size solid $color;
+}

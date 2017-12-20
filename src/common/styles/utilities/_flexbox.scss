@@ -1,0 +1,57 @@
+%u-flex-stretch {
+	display: flex;
+	align-items: stretch;
+}
+
+%u-flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+%u-flex-v-center {
+	display: flex;
+	align-items: center;
+}
+
+%u-flex-v-baseline {
+	display: flex;
+	align-items: baseline;
+}
+
+%u-flex-v-right {
+	display: flex;
+	align-items: flex-end;
+}
+
+%u-flex-h-center {
+	display: flex;
+	justify-content: center;
+}
+
+%u-flex-h-right {
+	display: flex;
+	justify-content: flex-end;
+}
+
+%u-flex-inline-v-center {
+	display: inline-flex;
+	align-items: center;
+}
+
+%u-flex-h-between {
+	display: flex;
+	justify-content: space-between;
+}
+
+%u-flex-v-between {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+%u-flex-v-bottom {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}

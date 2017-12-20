@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"target": "es2017",
+		"experimentalDecorators": true,
+		"module": "commonjs",
+		"baseUrl": "src/",
+		"paths": {
+			"@/*": [ "common/*" ]
+		}
+	},
+	"include": [
+		"src/common"
+	]
+}

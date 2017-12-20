@@ -1,0 +1,29 @@
+<%
+	var params = typeof(locals) !== 'undefined' ? locals : {};
+	params = Object.assign({
+		env: 'development',
+		helmet: {},
+		state: null,
+		markup: '',
+		entryBasePath: ''
+	}, params);
+
+%><!DOCTYPE html>
+<html<% if (params.helmet.htmlAttributes.toString()) { %> <%= params.helmet.htmlAttributes.toString() %><% } %>>
+	<head>
+		<% if (params.helmet.title) { %><%= params.helmet.title.toString() %><% } %>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<% if (params.helmet.meta) { %><%= params.helmet.meta.toString() %><% } %>
+		<% if (params.helmet.link) { %><%= params.helmet.link.toString() %><% } %>
+		<link rel="stylesheet" href="<%= params.entryBasePath %>style.css" />
+	</head>
+	
+	<body<% if (params.helmet.bodyAttributes.toString()) { %> <%= params.helmet.bodyAttributes.toString() %><% } %>>
+		<main id="app-root"><%= params.markup %></main>
+		<% if (params.state) { %><script>window.__DATA__ = <%= params.state %></script><% } %>
+		<script src="<%= params.entryBasePath %>vendors.js"></script>
+		<script src="<%= params.entryBasePath %>main.js"></script>
+	</body>
+</html>

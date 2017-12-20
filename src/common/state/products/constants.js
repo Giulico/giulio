@@ -1,0 +1,11 @@
+import { API } from '@/constants';
+
+const REQUEST_PRODUCTS = 'REQUEST_PRODUCTS';
+const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
+const PRODUCTS_API = API.PRODUCTS;
+
+export default {
+	REQUEST_PRODUCTS,
+	RECEIVE_PRODUCTS,
+	PRODUCTS_API
+};

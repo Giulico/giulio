@@ -1,0 +1,7 @@
+.wrapper {
+	color: white;
+}
+
+.item + .item {
+	margin-left: 10px;
+}

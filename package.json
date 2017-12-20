@@ -1,0 +1,148 @@
+{
+	"name": "aq-boilerplate-react-ssr",
+	"version": "0.0.0",
+	"description": "AQ Boilerplate React SSR",
+	"scripts": {
+		"start": "node dist/server",
+		"clean": "rimraf dist",
+		"commit": "git add . && git-cz",
+		"dev": "bnr -s dev",
+		"dev-client": "bnr -s dev-client",
+		"dev-server": "bnr -s dev-server",
+		"open": "node ./tools/open",
+		"build": "bnr -s build",
+		"build-client": "bnr -s build-client",
+		"build-server": "bnr -s build-server",
+		"eslint": "eslint \"./src/**/*.js\"",
+		"stylelint": "stylelint './src/**/*.scss'",
+		"lint": "yarn run eslint && yarn run stylelint",
+		"create-react-component": "node ./tools/create-react-component",
+		"mock": "babel-node ./src/mock/index.js"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://git.aquest.it/frontenders/aq-boilerplate-react-ssr/issues"
+	},
+	"homepage": "https://git.aquest.it/frontenders/aq-boilerplate-react-ssr",
+	"betterScripts": {
+		"dev": {
+			"command": "yarn run clean && yarn run open && run-p dev-server dev-client",
+			"env": {
+				"NODE_ENV": "development",
+				"PRETTIFY": false
+			}
+		},
+		"dev-server": {
+			"command": "webpack --config tools/webpack-config/server.hmr.babel.js --hide-modules",
+			"env": {
+				"NODE_ENV": "development",
+				"SERVER": true
+			}
+		},
+		"dev-client": {
+			"command": "webpack-dev-server --config tools/webpack-config/client.hmr.babel.js",
+			"env": {
+				"NODE_ENV": "development"
+			}
+		},
+		"build": {
+			"command": "yarn run clean && yarn run lint && yarn run build-client && yarn run build-server",
+			"env": {
+				"NODE_ENV": "production"
+			}
+		},
+		"build-client": {
+			"command": "webpack -p --hide-modules --progress --config tools/webpack-config/client.babel.js",
+			"env": {
+				"NODE_ENV": "production"
+			}
+		},
+		"build-server": {
+			"command": "webpack --hide-modules --progress --config tools/webpack-config/server.babel.js",
+			"env": {
+				"NODE_ENV": "production",
+				"SERVER": true
+			}
+		}
+	},
+	"dependencies": {
+		"axios": "^0.17.1",
+		"cookie-parser": "1.4.3",
+		"core-js": "^2.5.3",
+		"deep-object-diff": "1.0.4",
+		"express": "4.16.2",
+		"gsap": "1.20.3",
+		"ip": "1.1.5",
+		"normalize.css": "7.0.0",
+		"pretty": "2.0.0",
+		"prop-types": "15.6.0",
+		"react": "^16.2.0",
+		"react-dom": "^16.2.0",
+		"react-helmet": "5.2.0",
+		"react-redux": "5.0.6",
+		"react-router-dom": "4.2.2",
+		"redux": "3.7.2",
+		"redux-thunk": "2.2.0",
+		"require-uncached": "1.0.3",
+		"strip-tags": "^0.1.1"
+	},
+	"devDependencies": {
+		"autoprefixer": "^7.2.2",
+		"babel-cli": "6.26.0",
+		"babel-core": "6.26.0",
+		"babel-eslint": "^8.0.3",
+		"babel-loader": "7.1.2",
+		"babel-plugin-add-module-exports": "0.2.1",
+		"babel-plugin-react-transform": "3.0.0",
+		"babel-plugin-transform-async-to-generator": "6.24.1",
+		"babel-plugin-transform-class-properties": "6.24.1",
+		"babel-plugin-transform-decorators-legacy": "1.3.4",
+		"babel-plugin-transform-es2015-block-scoping": "^6.26.0",
+		"babel-plugin-transform-export-extensions": "6.22.0",
+		"babel-plugin-transform-object-rest-spread": "6.26.0",
+		"babel-plugin-transform-runtime": "6.23.0",
+		"babel-preset-es2015": "6.24.1",
+		"babel-preset-react": "6.24.1",
+		"babel-register": "6.26.0",
+		"better-npm-run": "0.1.0",
+		"cors": "2.8.4",
+		"css-hot-loader": "^1.3.4",
+		"css-loader": "0.28.7",
+		"cz-aq-changelog": "^1.0.2",
+		"ejs": "2.5.7",
+		"ejs-loader": "0.3.0",
+		"eslint": "4.10.0",
+		"eslint-config-airbnb": "15.0.2",
+		"eslint-plugin-import": "2.8.0",
+		"eslint-plugin-jsx-a11y": "6.0.2",
+		"eslint-plugin-react": "7.4.0",
+		"express-throttle-requests": "1.0.4",
+		"extract-text-webpack-plugin": "3.0.2",
+		"file-loader": "1.1.5",
+		"image-webpack-loader": "3.4.2",
+		"inquirer": "^4.0.1",
+		"lodash": "4.17.4",
+		"node-sass": "^4.7.2",
+		"node-sass-json-importer": "3.0.2",
+		"npm-run-all": "4.1.2",
+		"open": "0.0.5",
+		"postcss": "6.0.14",
+		"postcss-loader": "^2.0.9",
+		"raw-loader": "0.5.1",
+		"react-transform-hmr": "1.0.4",
+		"rimraf": "2.6.2",
+		"sass-loader": "6.0.6",
+		"server-destroy": "1.0.1",
+		"start-server-webpack-plugin": "2.2.0",
+		"style-loader": "0.19.0",
+		"stylelint": "8.2.0",
+		"stylelint-config-standard": "17.0.0",
+		"stylelint-order": "0.7.0",
+		"stylelint-scss": "2.1.0",
+		"sync-files": "1.0.3",
+		"webfonts-loader": "^4.0.1",
+		"webpack": "^3.10.0",
+		"webpack-dev-server": "^2.9.7",
+		"webpack-modernizr-loader": "4.0.0"
+	}
+}
