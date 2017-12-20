@@ -65,6 +65,11 @@
 			}
 		}
 	},
+	"config": {
+		"commitizen": {
+			"path": "node_modules/cz-aq-changelog"
+		}
+	},
 	"dependencies": {
 		"axios": "^0.17.1",
 		"cookie-parser": "1.4.3",
