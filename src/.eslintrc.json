@@ -1,0 +1,23 @@
+{
+    "extends": [
+        "airbnb"
+    ],
+
+    "plugins": [],
+
+    "globals": {
+    },
+
+    "rules": {
+        "indent": ["error", 4],
+        "import/extensions": "never"
+    },
+
+    "settings": {
+        "import/resolver": {
+            "webpack": {
+                "config": "../tools/webpack-config/common.babel.js"
+            }
+        }
+    }
+}
