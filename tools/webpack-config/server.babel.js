@@ -71,7 +71,8 @@ const config = Object.assign({}, commonConfig, {
 	plugins: [
 		...commonConfig.plugins,
 		new webpack.NormalModuleReplacementPlugin(/\bbonus-files-for-npm-users\b/, path.resolve(paths.SHIMS, 'empty')),
-		new webpack.NormalModuleReplacementPlugin(/\bmodernizr\b/, path.resolve(paths.SHIMS, 'empty'))
+		new webpack.NormalModuleReplacementPlugin(/\bmodernizr\b/, path.resolve(paths.SHIMS, 'empty')),
+		new webpack.NormalModuleReplacementPlugin(/\bpixi.js\b/, path.resolve(paths.SHIMS, 'pixijs'))
 	]
 	
 });

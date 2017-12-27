@@ -3,7 +3,7 @@ import { ROOT } from './constants';
 const initialState = {
 	seo: {
 		url: ROOT,
-		title: 'AQ Boilerplate React SSR',
+		title: 'Giulio\'s portfolio',
 		description: 'Lorem ipsum dolro sit amet',
 		favicon: require('@/assets/images/favicon.ico'),
 		image: require('@/assets/images/share.jpg')
