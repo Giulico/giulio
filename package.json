@@ -9,6 +9,8 @@
 		"dev": "bnr -s dev",
 		"dev-client": "bnr -s dev-client",
 		"dev-server": "bnr -s dev-server",
+		"mock": "babel-node ./src/mock/index.js",
+		"mock:dev": "run-p mock dev",
 		"open": "node ./tools/open",
 		"build": "bnr -s build",
 		"build-client": "bnr -s build-client",
@@ -16,8 +18,7 @@
 		"eslint": "eslint \"./src/**/*.js\"",
 		"stylelint": "stylelint './src/**/*.scss'",
 		"lint": "yarn run eslint && yarn run stylelint",
-		"create-react-component": "node ./tools/create-react-component",
-		"mock": "babel-node ./src/mock/index.js"
+		"create-react-component": "node ./tools/create-react-component"
 	},
 	"license": "MIT",
 	"bugs": {
